@@ -1,4 +1,4 @@
-Mtaje - Cadastro de Clientes
+Mteja - Cadastro de Clientes
 ============================
 
 Projeto em C# com o objetivo de ensinar conceitos de banco de dados criando uma aplicação "real" de cadastro de clients.
