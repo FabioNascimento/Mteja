@@ -66,5 +66,25 @@ namespace Mteja.Tests
 
             Assert.Throws<Exception>(() => cliente.VerificarSeNomeEhVazio(), "Nome do Cliente é obrigatório.");
         }
+
+        [Test]
+        public void Todo_Cliente_Tem_Uma_Data_Cadastro()
+        {
+            var cliente = new Cliente();
+
+            var dataAgora = DateTime.Now;
+
+            cliente.DataCadastro = dataAgora;
+
+            Assert.AreEqual(dataAgora, cliente.DataCadastro);
+        }
+
+        [Test]
+        public void Data_De_Cadastro_Do_Cliente_Nao_Pode_Ser_Nulo()
+        {
+            var cliente = new Cliente();
+
+            Assert.Throws<Exception>( () => cliente.VerificarSeDataEhNula(), "Data de Cadastro do cliente é obrigatório.");
+        }
     }
 }
