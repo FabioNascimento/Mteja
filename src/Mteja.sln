@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mteja.UI", "Mteja.UI\Mteja.UI.csproj", "{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mteja.DI", "Mteja.DI\Mteja.DI.csproj", "{DBF6292B-058A-4457-869D-7D3A88070A63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mteja.Tests", "Mteja.Tests\Mteja.Tests.csproj", "{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E88935A7-E9D5-4AB8-B571-12C58E973881}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Debug|x86.ActiveCfg = Debug|x86
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Debug|x86.Build.0 = Debug|x86
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Release|x86.ActiveCfg = Release|x86
+		{8FCE1F30-C6BC-4B4C-B3A9-CAA5948E7EA0}.Release|x86.Build.0 = Release|x86
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Debug|x86.ActiveCfg = Debug|x86
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Debug|x86.Build.0 = Debug|x86
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Release|x86.ActiveCfg = Release|x86
+		{DBF6292B-058A-4457-869D-7D3A88070A63}.Release|x86.Build.0 = Release|x86
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Debug|x86.ActiveCfg = Debug|x86
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Debug|x86.Build.0 = Debug|x86
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Release|x86.ActiveCfg = Release|x86
+		{221EFE8C-FE0B-4D87-A6CC-41B23DD1BFDB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

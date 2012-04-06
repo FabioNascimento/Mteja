@@ -1,0 +1,8 @@
+
+bin/
+obj/
+/src/*.suo
+
+/src/_ReSharper.Mteja
+/src/packages/
+!/src/packages/repositories.config
