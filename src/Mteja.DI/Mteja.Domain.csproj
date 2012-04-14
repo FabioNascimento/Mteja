@@ -8,8 +8,8 @@
     <ProjectGuid>{DBF6292B-058A-4457-869D-7D3A88070A63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mteja.DI</RootNamespace>
-    <AssemblyName>Mteja.DI</AssemblyName>
+    <RootNamespace>Mteja.Domain</RootNamespace>
+    <AssemblyName>Mteja.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -75,7 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteServico.cs" />
     <Compile Include="Endereco.cs" />
+    <Compile Include="ITodosClientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

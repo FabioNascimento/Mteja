@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Mteja.DI
+namespace Mteja.Domain
 {
     public class Cliente
     {
+        public int Codigo { get; set; }
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
         

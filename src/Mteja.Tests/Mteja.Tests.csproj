@@ -75,19 +75,26 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteTeste.cs" />
+    <Compile Include="DataBaseUtils.cs" />
     <Compile Include="EnderecoTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodosClientesTestMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mteja.DI\Mteja.DI.csproj">
+    <ProjectReference Include="..\Mteja.DI\Mteja.Domain.csproj">
       <Project>{DBF6292B-058A-4457-869D-7D3A88070A63}</Project>
-      <Name>Mteja.DI</Name>
+      <Name>Mteja.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mteja.Infra\Mteja.Infra.csproj">
+      <Project>{915D94A6-DDE0-4003-B0C0-0E1D2F67F8F6}</Project>
+      <Name>Mteja.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

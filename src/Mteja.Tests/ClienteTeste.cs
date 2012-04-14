@@ -1,5 +1,7 @@
 ﻿using System;
-using Mteja.DI;
+using System.Collections.Generic;
+using Mteja.Domain;
+using Mteja.Infra;
 using NUnit.Framework;
 
 namespace Mteja.Tests
@@ -7,6 +9,16 @@ namespace Mteja.Tests
     [TestFixture]
     public class ClienteTeste
     {
+        string connectionString = @"Data Source=localhost\AGRO_CO; User=sa; password=sap@123; Initial Catalog=App";
+        string provider = @"System.Data.SqlClient";
+
+        [SetUp]
+        public void Setup()
+        {
+            var databaseService = new DataBaseService(connectionString, provider);
+            databaseService.RemoveTabelaCliente();
+        }
+
         [Test]
         public void Posso_Ter_Um_Cliente()
         {
@@ -85,6 +97,26 @@ namespace Mteja.Tests
             var cliente = new Cliente();
 
             Assert.Throws<Exception>(cliente.VerificarSeDataEhNula, "Data de Cadastro do cliente é obrigatório.");
+        }
+
+        [Test]
+        public void Posso_Enviar_Cliente_Para_Ser_Armazenado()
+        {
+            //Arrange
+            //var todosClientes = new TodosClientesBanco(connectionString, provider);
+            var todosClientesFake = new TodosClientesTestMock();
+            var clienteServico = new ClienteServico(todosClientesFake);
+
+            //Act
+            var cliente = new Cliente();            
+            cliente.Nome = "Fábio Nascimento";
+            clienteServico.Salvar(cliente);            
+
+            //Assert
+            var clientes = clienteServico.ObjterTodos();
+
+            Assert.NotNull(clientes);
+            Assert.AreEqual(1, clientes.Count);
         }
     }
 }
