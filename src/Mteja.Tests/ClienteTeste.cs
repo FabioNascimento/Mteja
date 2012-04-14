@@ -44,7 +44,7 @@ namespace Mteja.Tests
             var cliente = new Cliente();
 
             cliente.Nome = "   ";
-            Assert.Throws<Exception>(() => cliente.VerificarSeNomeEhVazio(), "Nome do Cliente é obrigatório.");
+            Assert.Throws<Exception>(cliente.VerificarSeNomeEhVazio, "Nome do Cliente é obrigatório.");
         }
 
         [Test]
@@ -54,7 +54,7 @@ namespace Mteja.Tests
 
             cliente.Nome = null;
 
-            Assert.Throws<Exception>(() => cliente.VerificarSeNomeEhVazio(), "Nome do Cliente é obrigatório.");
+            Assert.Throws<Exception>(cliente.VerificarSeNomeEhVazio, "Nome do Cliente é obrigatório.");
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace Mteja.Tests
 
             cliente.Nome = "";
 
-            Assert.Throws<Exception>(() => cliente.VerificarSeNomeEhVazio(), "Nome do Cliente é obrigatório.");
+            Assert.Throws<Exception>(cliente.VerificarSeNomeEhVazio, "Nome do Cliente é obrigatório.");
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace Mteja.Tests
         {
             var cliente = new Cliente();
 
-            Assert.Throws<Exception>( () => cliente.VerificarSeDataEhNula(), "Data de Cadastro do cliente é obrigatório.");
+            Assert.Throws<Exception>(cliente.VerificarSeDataEhNula, "Data de Cadastro do cliente é obrigatório.");
         }
     }
 }
