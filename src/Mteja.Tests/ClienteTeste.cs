@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Mteja.Domain;
 using Mteja.Infra;
 using NUnit.Framework;
@@ -108,15 +109,46 @@ namespace Mteja.Tests
             var clienteServico = new ClienteServico(todosClientesFake);
 
             //Act
-            var cliente = new Cliente();            
+            var cliente = new Cliente();
             cliente.Nome = "Fábio Nascimento";
-            clienteServico.Salvar(cliente);            
+            clienteServico.Salvar(cliente);
 
             //Assert
-            var clientes = clienteServico.ObjterTodos();
+            var clientes = clienteServico.ObterTodos();
 
             Assert.NotNull(clientes);
             Assert.AreEqual(1, clientes.Count);
+        }
+
+        [Test]
+        public void Posso_Recuperar_Um_Cliente_Previamente_Salvo()
+        {
+            //Arrange
+            //var todosClientes = new TodosClientesBanco(connectionString, provider);
+            var todosClientesFake = new TodosClientesTestMock();
+            var clienteServico = new ClienteServico(todosClientesFake);
+
+            //Act
+            var cliente = new Cliente();
+            cliente.Nome = "Fábio Nascimento";
+            clienteServico.Salvar(cliente);
+
+            var outroCliente = new Cliente();
+            outroCliente.Nome = "Moxé";
+            clienteServico.Salvar(outroCliente);
+
+            //Assert
+            var clientes = clienteServico.ObterTodos();
+
+            Assert.AreEqual(2, clientes.Count);
+
+            var codigoCliente = 1;
+            var clienteSalvo = clienteServico.ObterPor(codigoCliente);
+
+            Assert.AreEqual(cliente.Codigo, clienteSalvo.Codigo);
+            Assert.AreEqual(cliente.Nome, clienteSalvo.Nome);
+            Assert.IsNotNull(cliente.DataCadastro);
+
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Mteja.Domain;
 using WebMatrix.Data;
 
@@ -26,11 +25,32 @@ namespace Mteja.Infra
 
             db.Execute(query, cliente.Nome, cliente.DataCadastro);
 
-            var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
+            cliente.Codigo = db.GetLastInsertId();
 
-            cliente.Codigo = Convert.ToInt32(id);
+            //var id = int;
+            //db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
+            //cliente.Codigo = Convert.ToInt32(id);
 
             return cliente;
+        }
+
+        public List<Cliente> ObterTodos()
+        {
+            var db = ObterBancoDados();
+            var query = "Select Codigo,Nome,DataCadastro From Cliente";
+            var queryResult = db.Query(query);
+            var clientes = ConveterParaCliente(queryResult);
+
+            return clientes;
+        }
+
+        public Cliente ObterPor(int id)
+        {
+            var db = ObterBancoDados();
+            var query = "Select Codigo,Nome,DataCadastro From Cliente Where Codigo = @0";
+            var queryResult = db.Query(query, id);
+
+            return ConveterParaCliente(queryResult).FirstOrDefault();
         }
 
         private Database ObterBancoDados()
@@ -38,14 +58,11 @@ namespace Mteja.Infra
             return Database.OpenConnectionString(_connetionString, _providerName);
         }
 
-
-        public List<Cliente> ObterTodos()
+        private static List<Cliente> ConveterParaCliente(IEnumerable<dynamic> queryResult)
         {
-            var db = ObterBancoDados();
-            var query = "Select Codigo,Nome,DataCadastro From Cliente";
             var clientes = new List<Cliente>();
 
-            foreach (var linha in db.Query(query))
+            foreach (var linha in queryResult)
             {
                 var cliente = new Cliente();
 
@@ -55,7 +72,6 @@ namespace Mteja.Infra
 
                 clientes.Add(cliente);
             }
-
             return clientes;
         }
     }

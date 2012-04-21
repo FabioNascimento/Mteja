@@ -7,5 +7,7 @@ namespace Mteja.Domain
         Cliente Inserir(Cliente cliente);
 
         List<Cliente> ObterTodos();
+
+        Cliente ObterPor(int id);
     }
 }

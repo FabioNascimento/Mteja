@@ -23,5 +23,20 @@ namespace Mteja.Tests
         {
             return clientes;
         }
+
+
+        public Cliente ObterPor(int id)
+        {
+            //FirstOrDefault 
+            //foreach (var cliente in clientes)
+            //{
+            //    if (cliente.Codigo == id)
+            //        return cliente;
+            //}
+
+            //return null;
+
+            return clientes.FirstOrDefault(cliente => cliente.Codigo == id);
+        }
     }
 }

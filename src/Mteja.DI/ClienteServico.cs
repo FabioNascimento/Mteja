@@ -24,9 +24,17 @@ namespace Mteja.Domain
             _todosClientes.Inserir(cliente);
         }
 
-        public List<Cliente> ObjterTodos()
+        public List<Cliente> ObterTodos()
         {
             return _todosClientes.ObterTodos();
         }
+
+        public Cliente ObterPor(int id)
+        {
+            var cliente = _todosClientes.ObterPor(id);
+
+            return cliente;
+        }
+
     }
 }
